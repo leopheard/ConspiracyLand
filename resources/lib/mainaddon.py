@@ -10,7 +10,7 @@ def get_soup(url):
     soup = BeautifulSoup(page.text, 'html.parser')
     print("type: ", type(soup))
     return soup
-get_soup("https://rss.acast.com/conspiracyland")
+get_soup("https://feeds.soundcloud.com/users/soundcloud:users:40330678/sounds.rss")
 
 
 def get_playable_podcast(soup):

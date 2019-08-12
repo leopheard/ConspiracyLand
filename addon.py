@@ -3,7 +3,7 @@ from resources.lib import mainaddon
 
 plugin = Plugin()
 
-URL = "https://rss.acast.com/conspiracyland"
+URL = "https://feeds.soundcloud.com/users/soundcloud:users:40330678/sounds.rss"
 
 @plugin.route('/')
 def main_menu():
@@ -32,7 +32,6 @@ def all_episodes():
     items = mainaddon.compile_playable_podcast(playable_podcast)
     return items
 
-
 @plugin.route('/all_episodes1/')
 def all_episodes1():
     """
@@ -42,7 +41,6 @@ def all_episodes1():
     playable_podcast1 = mainaddon.get_playable_podcast1(soup)
     items = mainaddon.compile_playable_podcast1(playable_podcast1)
     return items
-
 
 if __name__ == '__main__':
     plugin.run()
