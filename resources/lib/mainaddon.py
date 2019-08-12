@@ -8,7 +8,7 @@ def get_soup(url):
     """
     page = requests.get(url)
     soup = BeautifulSoup(page.text, 'html.parser')
-    print "type: ", type(soup)
+    print("type: ", type(soup))
     return soup
 get_soup("https://rss.acast.com/conspiracyland")
 
@@ -24,7 +24,7 @@ def get_playable_podcast(soup):
         try:        
             link = content.find('enclosure')
             link = link.get('url')
-            print "\n\nLink: ", link
+            print("\n\nLink: ", link)
 
             title = content.find('title')
             title = title.get_text()
@@ -42,11 +42,11 @@ def get_playable_podcast(soup):
                 'url': link,
                 'title': title,
 #                'desc': desc,
-#                'thumbnail': “https://mediacdn.acast.com/assets/13503961-32e2-428a-8181-5c4de64c504c/-jxkla9zp-conspiracyland_thumb1.jpg”
+                'thumbnail': "https://mediacdn.acast.com/assets/13503961-32e2-428a-8181-5c4de64c504c/-jxkla9zp-conspiracyland_thumb1.jpg",
         }
         
-        subjects.append(item) 
-     return subjects
+        subjects.append(item)
+    return subjects
 
 def compile_playable_podcast(playable_podcast):
     """
@@ -76,7 +76,7 @@ def get_playable_podcast1(soup):
         try:        
             link = content.find('enclosure')
             link = link.get('url')
-            print "\n\nLink: ", link
+            print("\n\nLink: ", link)
 
             title = content.find('title')
             title = title.get_text()
@@ -94,11 +94,11 @@ def get_playable_podcast1(soup):
                 'url': link,
                 'title': title,
 #                'desc': desc,
-                'thumbnail': “https://mediacdn.acast.com/assets/13503961-32e2-428a-8181-5c4de64c504c/-jxkla9zp-conspiracyland_thumb1.jpg”,
+                'thumbnail': "https://mediacdn.acast.com/assets/13503961-32e2-428a-8181-5c4de64c504c/-jxkla9zp-conspiracyland_thumb1.jpg",
         }
         
         subjects.append(item) 
-     return subjects
+    return subjects
 
 def compile_playable_podcast1(playable_podcast1):
     """
